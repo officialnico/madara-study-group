@@ -9,6 +9,7 @@ use crate::Error;
 
 #[test]
 fn given_contract_declare_tx_works_once_not_twice() {
+    //println!("Helloooo!");
     new_test_ext().execute_with(|| {
         System::set_block_number(0);
         run_to_block(2);
@@ -86,6 +87,7 @@ fn given_contract_declare_tx_fails_wrong_tx_version() {
     new_test_ext().execute_with(|| {
         System::set_block_number(0);
         run_to_block(2);
+        //println!("Helloooo!");
 
         let none_origin = RuntimeOrigin::none();
         let (account_addr, _, _) = account_helper(TEST_ACCOUNT_SALT);
